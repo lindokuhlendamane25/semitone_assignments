@@ -8,8 +8,8 @@ class JamBuddy{
 
     selectNotes(){
     //select two different notes
-        this.num1 = Math.floor(Math.random()* (notes.length-1));
-        this.num2 = Math.floor(Math.random()* (notes.length-1));
+        this.num1 = Math.floor(Math.random()* (notes.length));
+        this.num2 = Math.floor(Math.random()* (notes.length));
         var note1 = notes[this.num1];
         var note2 = notes[this.num2];
 
