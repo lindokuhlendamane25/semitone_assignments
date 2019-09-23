@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
-   <head>
-   </head>
-   <body>
-       <form action="">
-       <h1>Input the difference between the following notes</h1>
-       <label id="note1">Note 1</label>
-       <label id="note2">Note 2</label><br/>
-       <input type="text" id="userAnswer" required><br/>
-       <input type="submit" id="submit" value="check answer" onclick="jambuddy.checkAnswer()"><br/>
-       </form>
+  <head>
+  </head>
+  <body>
+      <form action="">
+      <h1>Input the difference between the following notes</h1>
+      <button onclick="jambuddy.selectNotes()">Get random notes</button><br/>
+     <label id="notes"></label><br/>
+     <input type="text" id="userAnswer" required><br/>
+     <input type="submit" id="submit" value="Submit answer" onclick="jambuddy.checkAnswer()"><br/>
+     </form>
 <script src="src/semitone2.js"></script>
-   </body>
+  </body>
 </html>
