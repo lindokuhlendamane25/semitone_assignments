@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <link href='semitone.css' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+      <form action="">
+        <h1>Semitone</h1>
+      <h2>Input the difference between the following notes</h2>
+      <button onclick="jambuddy.selectNotes()">Get random notes</button><br/>
+      <button onclick="jambuddy.checkAnswer()">Reveal answer</button><br/>
+     <label id="notes"></label><br/>
+     <input type="text" id="userAnswer" required><br/>
+     <input type="submit" id="submit" value="Submit answer" onclick="jambuddy.checkAnswer()"><br/>
+     </form>
+<script src="src/semitone2.js"></script>
+  </body>
+</html>
