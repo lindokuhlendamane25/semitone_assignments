@@ -1,8 +1,10 @@
 let notes = ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"];
+var arr = [];
 class JamBuddy {
   constructor() {
     this.num1;
     this.num2;
+    this.streak = 0;
   }
   selectNotes() {
     //select two different notes
@@ -15,7 +17,6 @@ class JamBuddy {
     var flat3 = ["D#", "eFlat"];
     var flat4 = ["F#", "gFlat"];
     var flat5 = ["G#", "aFlat"];
-    var count = 0;
     if (note1 === "A#") {
       var flatNum1 = Math.floor(Math.random() * 2);
       note1 = flat1[flatNum1];
@@ -56,9 +57,9 @@ class JamBuddy {
       flatNum1 = Math.floor(Math.random() * 2);
       note2 = flat5[flatNum1];
     }
-    var arr = [note1, note2];
+    arr = [note1, note2];
+    document.getElementById("explanation").innerHTML = "";
     document.getElementById("notes").innerHTML = arr;
-    document.getElementById("explanation").innerHTML = " ";
   }
   checkAnswer() {
     if (this.num1 < this.num2) {
@@ -69,14 +70,22 @@ class JamBuddy {
     var userAnswer = document.getElementById("userAnswer").value;
     userAnswer = parseInt(userAnswer);
     if (result === userAnswer) {
-      var ans = "You got it right .Well Done" + " Streak : " + this.count++;
+      var ans = "You got it right .Well Done" + " Streak : ";
       document.getElementById("explanation").innerHTML = notes;
+      this.streak++;
     } else {
       ans = "Wrong answer! Try again";
     }
-    alert(ans);
+    return alert(ans + this.streak);
   }
   revealAnswer() {
+    for (var a = 0; a < notes.length; a++) {
+      if (notes[a] === arr[0]) {
+        notes[a] = notes[a].fontcolor("green");
+      } else if (notes[a] === arr[1]) {
+        notes[a] = notes[a].fontcolor("green");
+      }
+    }
     document.getElementById("explanation").innerHTML = notes;
   }
 }
